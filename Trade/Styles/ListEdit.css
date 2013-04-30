@@ -1,0 +1,33 @@
+﻿.table-border { width: 100%; table-layout: fixed; border-collapse: collapse; border-left: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+.table-border th, .table-border td { border-top: 1px solid #ccc; border-right: 1px solid #ccc; padding: 2px; }
+    /* 列表样式-beg */
+.table-border-list {border-bottom:1px #cbcbcb solid;border-left:1px #cbcbcb solid; *border-collapse:collapse;}
+.table-border-list td {border-top:1px #cbcbcb solid;border-right:1px #cbcbcb solid;}
+.table-border-list th { font-weight:normal;height:20px; background:url(../Images/list/listtable_th.jpg);  border-top:1px #cbcbcb solid;border-right:1px #cbcbcb solid;}
+/* 列表样式 */
+table.listtable { margin:auto; table-layout: fixed; }
+table.listtable th { height:20px; background: #DDD repeat-x; color:#000000; font-family:Verdana, Geneva, sans-serif; font-size:12px; font-weight:normal; }
+table.listtable td { text-overflow:ellipsis; overflow: hidden; white-space: nowrap; }
+table.listtable tr:nth-child(2n) td { background-color:#EEE; }
+table.listtable tr:nth-child(2n+1) td { background-color:#FFF; }
+table.listtable tr:hover td { background-color:#ffffcc; }
+
+.textleft { text-align:left; padding-left:1%; padding-right:1%; }
+.textright { text-align:right;}
+.textcenter { text-align:center;}
+/* 列表样式-end */
+
+.labletitle { width: 100px; }
+.submit { text-align:center;}
+
+/* 分页 */
+.pagercontainer { text-align: center; }
+.pager { margin: 0 auto; text-align: center; }
+.pager a, .pager span { background: #E3F1F7; border:1px solid #9FB4C9;border-radius: 2px; color: #666666; display: inline-block; float: left; font-size: 14px; height: 20px; line-height: 20px; margin: 5px 3px; overflow: hidden; text-decoration: none; padding: 2px 7px;  }
+.pager a:hover, .pager a.selected { background: #006699; color: #FFFFFF; }
+.pager .pager { width:auto; }
+.pager .info { line-height: 30px; float:right!important; margin-right:20px; }
+.pager:after { display: block; height: 0px; visibility: hidden; clear: both; content: "."; }
+
+
+.querypanel {  border:solid 1px #ccc; border-radius:3px; box-shadow:0 1px 2px rgba(0, 0, 0, 0.05); padding:5px;}

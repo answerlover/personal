@@ -1,0 +1,72 @@
+﻿<?xml version="1.0"?>
+<!--
+  有关如何配置 ASP.NET 应用程序的详细信息，请访问
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <configSections>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net"/>
+  </configSections>
+  <log4net>
+    <root>
+      <level value="ERROR"/>
+      <!--文件形式记录日志-->
+      <appender-ref ref="RollingFile"/>
+    </root>
+    <!--定义输出到文件中-->
+    <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
+      <file value="Log/Error.log"/>
+      <appendToFile value="true"/>
+      <rollingStyle value="Size"/>
+      <maximumFileSize value="1MB"/>
+      <maxSizeRollBackups value="5"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <param name="ConversionPattern" value="%d %p - %m%n"/>
+      </layout>
+    </appender>
+  </log4net>
+
+  <connectionStrings>
+    <add name="DBConnectionString" connectionString="SERVER=221.231.138.29;Port=3306;DATABASE=wuhuaning321;UID=wuhuaning321;PASSWORD=TkXV1zzWLufu+J88uhRqfA==;charset=utf8;" providerName="System.Data.MySqlClient"/>
+  </connectionStrings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.0">
+      <assemblies>
+        <add assembly="System.Transactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+      </assemblies>
+    </compilation>
+
+    <pages controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID">
+      <controls>
+        <add assembly="AspNetPager" namespace="Wuqi.Webdiyer" tagPrefix="webdiyer"/>
+      </controls>
+    </pages>
+    <httpModules>
+      <add name="AuthModule" type="AuthenticationModule"/>
+    </httpModules>
+    <customErrors mode="Off" defaultRedirect="error.htm">
+      <error statusCode="404" redirect="404.htm"/>
+      <error statusCode="500" redirect="500.htm"/>
+    </customErrors>
+    <!--<sessionState mode="StateServer" timeout="30"></sessionState>-->
+
+  </system.web>
+  <system.webServer>
+    <!--忽略集成模式的错误-->
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules>
+      <!--<add type="URLRewriter.ModuleRewriter, URLRewriter" name="ModuleRewriter"/>-->
+      <add name="AuthModule" type="AuthenticationModule" />
+    </modules>
+    <defaultDocument>
+      <files>
+        <clear/>
+        <add value="Index.html"/>
+        <add value="Index.aspx"/>
+        <add value="Default.aspx"/>
+      </files>
+    </defaultDocument>
+
+  </system.webServer>
+
+</configuration>
